@@ -1,0 +1,33 @@
+{
+    "recipes": [
+        {
+            "title": "Pannkakor",
+            "ingredients": [
+                "mj\u00f6lk",
+                " \u00e4gg",
+                " salt",
+                " sm\u00f6r"
+            ],
+            "steps": [
+                "vispa ut mj\u00f6ljet till en sl\u00e4t smet",
+                "vispa i resterande mj\u00f6lk \u00e4gg och salt",
+                "l\u00e5t smeten sv\u00e4lla ca 10 min",
+                "sm\u00e4lt sm\u00f6r i en steckpanna och h\u00e4ll ner smeten"
+            ],
+            "category": "lunch",
+            "id": 1
+        },
+        {
+            "title": "pasta",
+            "ingredients": [
+                "pasta"
+            ],
+            "steps": [
+                "pasta"
+            ],
+            "category": "lunch",
+            "id": 2
+        }
+    ],
+    "last_id": 2
+}

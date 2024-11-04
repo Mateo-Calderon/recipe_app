@@ -1,0 +1,15 @@
+[
+    {
+        "recipe_id": 1,
+        "rating": 5.0,
+        "reviews": [
+            "pankakor alltid \u00e4r goda",
+            "dunder pankakor"
+        ]
+    },
+    {
+        "recipe_id": 2,
+        "rating": 0,
+        "reviews": []
+    }
+]
