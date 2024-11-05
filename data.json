@@ -18,16 +18,19 @@
             "id": 1
         },
         {
-            "title": "pasta",
+            "title": "kakor",
             "ingredients": [
-                "pasta"
+                "mj\u00f6lk",
+                " mj\u00f6l",
+                " sm\u00f6r"
             ],
             "steps": [
-                "pasta"
+                "blanda ihop",
+                " l\u00e4gg i ugnen"
             ],
-            "category": "lunch",
-            "id": 2
+            "category": "dessert",
+            "id": 3
         }
     ],
-    "last_id": 2
+    "last_id": 4
 }

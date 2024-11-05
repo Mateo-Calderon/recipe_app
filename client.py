@@ -6,6 +6,13 @@ BASE_URL = "http://127.0.0.1:8000/recipes/"
 
 # Funktion för att lägga till ett nytt recept
 def add_recipe():
+    '''
+    Denna funktion samlar in information om ett nytt recept från användaren, 
+    så som titel, ingredienser, tillagningssteg och kategori. 
+    Den skickar sedan en POST-förfrågan till API för att lägga till 
+    det nya receptet och skriver ut ett bekräftelsemeddelande om 
+    receptet har lagts till.
+    '''
     print("\n--- Add a New Recipe ---")
     # Skapa ett recept genom att samla in data från användaren
     recipe = {
@@ -24,6 +31,13 @@ def add_recipe():
 
 # Funktion för att lägga till en recension och betyg för ett recept
 def add_review(recipe_id):
+    '''
+    Denna funktion tar in ett recept-ID och samlar in ett betyg och en recension 
+    från användaren. Den hämtar befintliga recensioner för receptet och uppdaterar 
+    sedan recensionerna och betyget med den nya informationen. Funktionen skickar en 
+    PUT-förfrågan för att spara ändringarna och bekräftar om recensionen har lagts till 
+    framgångsrikt.
+    '''
     print("\n--- Add a Review ---")
     # Samla in betyg och recension från användaren
     rating = pyip.inputFloat("Enter Rating (0-5): ", min=0, max=5)  # Betyg mellan 0 och 5
@@ -47,6 +61,13 @@ def add_review(recipe_id):
 
 # Funktion för att söka efter recept baserat på ingrediens och kategori
 def search_recipes():
+    '''
+    Denna funktion låter användaren söka efter recept baserat på en specifik 
+    ingrediens och/eller kategori. Den skickar en GET-förfrågan med sökparametrarna 
+    till API och returnerar en lista över matchande recept. Funktionen hämtar även 
+    recensioner och betyg för varje recept i resultatet och skriver ut detaljerna för 
+    användaren.
+    '''
     print("\n--- Search for Recipes ---")
     # Samla in sökparameter för ingrediens
     ingredient = pyip.inputStr("Enter Ingredient to Search for (press Enter to skip): ", blank=True)
@@ -91,13 +112,17 @@ def search_recipes():
                         print("  No reviews yet.")
                 except requests.exceptions.HTTPError:
                     print("  Error retrieving reviews and rating.")
-        else:
-            print("No recipes found.")  # Om inga recept hittas
+                    
     except requests.exceptions.HTTPError as e:
         print("Error retrieving recipes:", e)  # Hantera eventuella fel
 
 # Funktion för att ta bort ett recept baserat på ID
 def delete_recipe():
+    '''
+    Denna funktion låter användaren ange ett recept-ID för att radera receptet 
+    från systemet. Funktionen skickar en DELETE-förfrågan till API för att ta bort 
+    det angivna receptet och bekräftar borttagningen genom att skriva ut ett meddelande.
+    '''
     print("\n--- Delete a Recipe ---")
     recipe_id = pyip.inputInt("Enter Recipe ID to delete: ")  # Samla in recept-ID
 
@@ -111,6 +136,12 @@ def delete_recipe():
 
 # Menyfunktion för att navigera mellan olika alternativ
 def menu():
+    '''
+    Menyfunktionen presenterar en lista med alternativ för användaren, som att 
+    lägga till ett recept, lägga till en recension, söka efter recept, radera ett recept, 
+    eller avsluta programmet. Baserat på användarens val anropar funktionen motsvarande 
+    funktion och hanterar interaktionen med API.
+    '''
     while True:
         # Visa meny och låt användaren välja ett alternativ
         choice = pyip.inputMenu(
